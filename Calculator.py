@@ -17,30 +17,7 @@ def click(event):
     else:
         entry.insert(tk.END, text)
 
-root = tk.Tk()
-root.title("Calculator")
-root.geometry("200x300")
-
-
-entry = tk.Entry(root, font="Arial 18import tkinter as tk
-
-def click(event):
-    current = str(entry.get())
-    text = event.widget.cget("text")
-    
-    if text == "=":
-        try:
-            result = eval(current)
-            entry.delete(0, tk.END)
-            entry.insert(0, result)
-        except:
-            entry.delete(0, tk.END)
-            entry.insert(0, "Error")
-    elif text == "C":
-        entry.delete(0, tk.END)
-    else:
-        entry.insert(tk.END, text)
-
+# Create window
 root = tk.Tk()
 root.title("Calculator")
 root.geometry("300x400")
@@ -53,12 +30,12 @@ entry.pack(fill=tk.BOTH, ipadx=8, pady=10)
 btn_frame = tk.Frame(root)
 btn_frame.pack()
 
-buttons = [
-    ['7', '8', '9', '/'],
-    ['4', '5', '6', '*'],
-    ['1', '2', '3', '-'],
-    ['C', '0', '=', '+']
-]
+buttons=[ 
+      ['1','2','3','C'],
+      ['4','5','6','+'],
+      ['7','8','9','*'],
+      ['0','/','-','=']
+      ]
 
 for row in buttons:
     r = tk.Frame(btn_frame)
@@ -68,4 +45,4 @@ for row in buttons:
         b.pack(side="left", expand=True, fill="both")
         b.bind("<Button-1>", click)
 
-root.mainloop()")
+root.mainloop()
